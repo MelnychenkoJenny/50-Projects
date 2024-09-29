@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333333;
+  color:#222222;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.container {
+  background-color: #fafafa;
+  min-height: 100vh;
+  padding: 50px;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  left: -100px;
+  position: fixed;
+  top: -100px;
+}
+
+.circle {
+  background-color: #e48888;
+  border-radius: 50%;
+  height: 200px;
+  position: relative;
+  transition: transform 0.5s linear;
+  width: 200px;
+}
+
+.container.show-nav .circle{
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 26px;
+  height: 100px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform-origin: top left;
+  transform: rotate(90deg);
+}
+
+.content {
+  max-width: 1300px;
+  margin: 50px auto;
+}
+
+.content small {
+  color: #555555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333333;
+  line-height: 1.5;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  bottom: 40px;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  transform: translateX(-100%);
+  color: #ffffff;
+  margin: 40px 0;
+  text-transform: uppercase;
+  transition: transform 0.4s ease;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+
