@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  color: #ffffff;
+  left: 50%;
+  position: absolute;
+  top: 20%;
+  font-size: 48px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  align-items: center;
+  border-radius: 5px;
+  border: #ffffff solid 1px;
+  color: #ffffff;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  left: 50%;
+  padding: 10px;
+  position: absolute;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 40%;
+  transform: translateX(-50%);
+  width: 130px;
+  transition: background-color 0.8s ease, border-color 0.8s ease;
+}
+
+.split.left .btn:hover {
+  background-color: rgba(28, 122, 236, 1);
+  border-color: rgba(28, 122, 236, 1);
+}
+
+.split.right .btn:hover {
+  background-color: rgba(28, 122, 28, 1);
+  border-color: rgba(28, 122, 28, 1);
+}
+
+.container {
+  background: #333333;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.split {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 50%;
+}
+
+.split.left {
+  background: url('https://gamesua.com.ua/upload/medialibrary/4c5/tnl066u6ith7kvgt6h11jblok2slg82x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+}
+
+.split.left::before {
+  background-color: rgba(90, 89, 163, 0.8);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.split.right {
+  background: url('https://assetsio.gnwcdn.com/digitalfoundry-2020-just-how-big-is-xbox-series-x-really-1584111571973.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 0;
+}
+
+.split.right::before {
+  background-color: rgba(45, 80, 47, 0.8);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.split.right, .split.left, .split.right::before, .split.left::before {
+  transition: all 1s ease-in-out;
+}
+
+.hover-left .left::before, .hover-right .right::before{
+  background-color: transparent;
+}
+
+.hover-left .left{
+  width: 75%;
+}
+
+.hover-left .right {
+  width: 25%;
+}
+
+.hover-right .right{
+  width: 75%;
+}
+
+.hover-right .left {
+  width: 25%;
+}
+
+@media(max-width: 800px) {
+  h1 {
+    font-size: 18px;
+    top: 20%;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 6px;
+    top: 30%;
+    width: 100px;
+  }
+}
